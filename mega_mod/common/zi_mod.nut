@@ -277,8 +277,8 @@ function MM_ZI_OverrideSetupFinished() {
 
             // MEGAMOD: Force round time to 2 minutes.
             local _hRoundTimer = Entities.FindByClassname( null, "team_round_timer" );
-            EntFireByHandle(_hRoundTimer, "SetTime", "120", 0, null, null);
-            EntFireByHandle(_hRoundTimer, "SetMaxTime", "120", 0, null, null);
+            EntFireByHandle(_hRoundTimer, "SetTime", "150", 0, null, null);
+            EntFireByHandle(_hRoundTimer, "SetMaxTime", "150", 0, null, null);
 
             PlayGlobalBell( false );
 
