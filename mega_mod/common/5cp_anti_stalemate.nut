@@ -26,7 +26,7 @@ function Setup5CPKothTimer() {
     local mp_timelimit = Convars.GetInt("mp_timelimit");
 
     local MM_5CP_TIME_UPPER_LIMIT = 600;
-    local MM_5CP_TIME_LOWER_LIMIT = 300;
+    local MM_5CP_TIME_LOWER_LIMIT = 600;
 
     // If mp_timelimit is close, adjust the round timer to prevent excessive maptime.
     if (mp_timelimit != null && mp_timelimit > 0) {
