@@ -113,7 +113,7 @@ function ConfigureCaptureAreas() {
     ::MM_5CP_POINT_COUNT <- count;
     for (local ent = null; ent = Entities.FindByClassname(ent, "trigger_capture_area");) {
         // Force all control points to have the longest capture time present on the map.
-        ent.AcceptInput("AddOutput", "area_time_to_cap " + maxTime, null,  null);
+       // ent.AcceptInput("AddOutput", "area_time_to_cap " + maxTime, null,  null);
         ent.AcceptInput("SetControlPoint", NetProps.GetPropString(ent, "m_iszCapPointName"), null, null); // Prevent the capping HUD being jank (thanks ficool2)
 
         // Check for end of round since the KOTH logic messes with the vanilla method.
