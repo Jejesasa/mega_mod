@@ -76,7 +76,7 @@ function OnGameEvent_teamplay_round_start(params) {
 
     // Timer logic replacement
     EntityOutputs.RemoveOutput(PLR_TIMER, "OnSetupFinished", "setup_timer_a", "Disable", "");
-    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeString(65), 0, -1);
+    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeStringMS(65), 0, -1);
     EntityOutputs.AddOutput(PLR_TIMER, "OnFinished", "!self", "RunScriptCode", "StartOvertime()", 0, -1);
 
     SpawnEntityFromTable("team_round_timer", {
@@ -128,7 +128,7 @@ function OnRound2Start() {
     ::BLU_WATCHER <- MM_GetEntByName("blue_watcher_2");
 
     EntityOutputs.RemoveOutput(PLR_TIMER, "OnSetupFinished", "setup_timer_b", "Disable", "");
-    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeString(65), 0, -1);
+    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeStringMS(65), 0, -1);
     EntityOutputs.AddOutput(PLR_TIMER, "OnFinished", "!self", "RunScriptCode", "StartOvertime()", 0, -1);
 
     ResetCartStates();
