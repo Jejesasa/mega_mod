@@ -110,7 +110,7 @@ function OnGameEvent_teamplay_round_start(params) {
 
     // Timer logic
     EntityOutputs.AddOutput(PLR_TIMER, "OnFinished", "!self", "RunScriptCode", "StartOvertime()", 0, -1);
-    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeString(45), 0, -1);
+    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeStringMS(45), 0, -1);
 
     SpawnEntityFromTable("team_round_timer", {
         setup_length = 45,
@@ -182,7 +182,7 @@ function OnRound2Start() {
     ::RED_WATCHER <- MM_GetEntByName("plr_red_watcherB");
     ::BLU_WATCHER <- MM_GetEntByName("plr_blu_watcherB");
 
-    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeString(45), 0, -1);
+    EntityOutputs.AddOutput(PLR_TIMER, "OnSetupFinished", "!self", "SetTime", GetRoundTimeStringMS(45), 0, -1);
     EntFireByHandle(PLR_TIMER, "ShowInHud", "1", 0, null, null);
     EntFireByHandle(PLR_TIMER, "Enable", "", 0.1, null, null);
 
