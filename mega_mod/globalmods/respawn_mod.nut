@@ -1,7 +1,7 @@
 function ShouldApply() {
     local gamemodes = [
         MM_Gamemodes.AD,
-        MM_Gamemodes.AD_MS,
+       // MM_Gamemodes.AD_MS,
         MM_Gamemodes.PL,
         MM_Gamemodes.PL_MS
     ];
