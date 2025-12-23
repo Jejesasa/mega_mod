@@ -1,5 +1,5 @@
-::MM_PLR_TIME_UPPER_LIMIT <- 600;
-::MM_PLR_TIME_LOWER_LIMIT <- 90;
+::MM_PLR_TIME_UPPER_LIMIT <- 1200;
+::MM_PLR_TIME_LOWER_LIMIT <- 600;
 
 // Defines minimum multiplier applied to cart speed for the dynamic speed system.
 ::MM_PLR_MINIMUM_SPEED_RATIO <- 0.35;
@@ -102,24 +102,17 @@ function GetRoundTimeString(setup = 0) {
     return "" + GetRoundTime(setup);
 }
 
+function GetRoundTimeStringMS(setup = 0) {
+    return "" + GetRoundTimeMS(setup);
+}
+
 function GetRoundTime(setup = 0) {
     local time = MM_PLR_TIME_UPPER_LIMIT;
-    local gamerules = Gamerules();
-    local mp_timelimit = Convars.GetInt("mp_timelimit");
-    // If mp_timelimit is close, adjust the round timer to prevent excessive maptime.
-    if (mp_timelimit != null && mp_timelimit > 0) {
-        local remainingTime = (mp_timelimit * 60)
-            - (Time() - NetProps.GetPropFloat(gamerules, "m_flMapResetTime"))
-            - setup;
+    return time;
+}
 
-        if(remainingTime < time) {
-            time = floor(remainingTime / 30) * 30;
-        }
-    }
-
-    if (time > MM_PLR_TIME_UPPER_LIMIT) time = MM_PLR_TIME_UPPER_LIMIT;
-    if (time < MM_PLR_TIME_LOWER_LIMIT) time = MM_PLR_TIME_LOWER_LIMIT;
-
+function GetRoundTimeMS(setup = 0) {
+    local time = MM_PLR_TIME_LOWER_LIMIT;
     return time;
 }
 
