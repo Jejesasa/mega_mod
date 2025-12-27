@@ -158,13 +158,21 @@ function MM_ZI_OverrideSetupFinished() {
                 {
                     _numStartingZombies = 3;
                 }
-                else if (_iPlayerCountRed <= 16)
+                else if (_iPlayerCountRed <= 18)
                 {
                     _numStartingZombies = 4;
                 }
+                else if (_iPlayerCountRed <= 24)
+                {
+                    _numStartingZombies = 5;
+                }
+                else if (_iPlayerCountRed <= 30)
+                {
+                    _numStartingZombies = 6;
+                }
                 else // 17 or more players
                 {
-                    _numStartingZombies = floor(sqrt(_iPlayerCountRed - 1));
+                    _numStartingZombies = _iPlayerCountRed / 5;
                 }
             }
 
